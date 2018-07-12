@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="RFID:war exploded">
+    <output-path>$PROJECT_DIR$/target/rfid</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="RFID" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/rfid/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="RFID/web/Web" />
+    </root>
+  </artifact>
+</component>
