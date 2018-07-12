@@ -14,8 +14,8 @@
     <mvc:annotation-driven/><!--静态资源访问-->
     <mvc:default-servlet-handler/><!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <propertyname="prefix" value="/"/>
-        <propertyname="suffix" value=".html"/>
-        <propertyname="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".html"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
     </bean>
 </beans><!--拦截器--> <!-- <mvc:interceptors> &lt;!&ndash;可配置多个拦截器,顺序执行 &ndash;&gt; <mvc:interceptor> <mvc:mapping path="/product/**"/>&lt;!&ndash;如果不配置或/*,将拦截所有的Controller &ndash;&gt; <bean class="manage.base.interceptor.PermissionInterceptor"></bean> </mvc:interceptor> </mvc:interceptors>-->
