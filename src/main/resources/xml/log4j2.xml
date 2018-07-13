@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<properties>
+		<property name="log4jPrefix">${sys:log4jPrefix}</property>
+
+		<!-- 文件输出格式 -->
+		<property name="PATTERN">${log4jPrefix} %d{yyyy-MM-dd HH:mm:ss,SSS} %p %l -%m%n</property>
+	</properties>
+
+	<Appenders>
+	
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<ThresholdFilter level="INFO"/>
+			<PatternLayout pattern="${PATTERN}" />
+		</Console>
+		
+		<RollingFile name="LogFile" fileName="logs/log4j_log.log"
+			filePattern="logs/log4j_log.log.%d{yyyy-MM-dd}" append="true">
+			<ThresholdFilter level="INFO"/>
+			<PatternLayout pattern="${PATTERN}" />
+			<Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+		</RollingFile>
+		
+		<RollingFile name="ERROR" fileName="logs/log4j_error.log"
+			filePattern="logs/log4j_error.log.%d{yyyy-MM-dd}" append="true">
+			<ThresholdFilter level="error"/>
+			<PatternLayout pattern="${PATTERN}" />
+			<Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+		</RollingFile>
+		
+	</Appenders>
+	<Loggers>
+		<Root level="INFO">
+			<appender-ref ref="CONSOLE" />
+			<appender-ref ref="ERROR" />
+			<appender-ref ref="LogFile" />
+		</Root>
+	</Loggers>
+
+</configuration> 
