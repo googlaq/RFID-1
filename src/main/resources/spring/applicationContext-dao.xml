@@ -21,7 +21,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!-- 加载mybatis的全局配置文件 -->
-        <property name="configLocation" value="classpath:mybatis/sqlMapConfig.xml"/>
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="manage.dao"/><!-- 具体dao层包的位置在哪，视你新建的dao层java包而定 -->

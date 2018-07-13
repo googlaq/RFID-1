@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--resultType 指定单条记录返回的类型-->
+<mapper namespace="com.starlight.rfid.dao.IUserDao">
+    <select id="queryUserById" parameterType="int" resultType="com.starlight.rfid.model.User">
+        select * from userinfor where id = #{id}
+    </select>
+
+    <select id="queryUserByName" parameterType="String" resultType="com.starlight.rfid.model.User">
+        SELECT * FROM userinfor WHERE username LIKE #{name}
+    </select>
+
+    <insert id="addUser" parameterType="com.starlight.rfid.model.User">
+        insert into userinfor (id,username,password,birthday,sex,address) values (#{id},#{password},#{username},#{birthday},#{sex},#{address})
+    </insert>
+</mapper>
